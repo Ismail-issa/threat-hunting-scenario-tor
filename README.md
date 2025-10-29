@@ -135,158 +135,122 @@ DeviceNetworkEvents
 
     Source: tor-usage.csv
 
-2025-10-08
-20:22:26 — Silent Install (Tor Browser)
+**2025-10-08**
+  *20:22:26 — Silent Install (Tor Browser)*
 
-User: murrellsh
+    User: murrellsh
 
-Binary: tor-browser-windows-x86_64-portable-14.5.8.exe /S
+    Binary: tor-browser-windows-x86_64-portable-14.5.8.exe /S
 
-Source: tor-install.csv
+    Source: tor-install.csv
 
-2025-10-13
-23:58:39 — Silent Install (Tor Browser)
+**2025-10-13**
+  *23:58:39 — Silent Install (Tor Browser)*
 
+    User: josephcompton
 
-User: josephcompton
+    Binary: tor-browser-windows-x86_64-portable-14.5.8.exe /S
 
+    Source: tor-install.csv
 
-Binary: tor-browser-windows-x86_64-portable-14.5.8.exe /S
 
+**2025-10-14**
+  *11:53:06 — Silent Install (Tor Browser)*
 
-Source: tor-install.csv
+    User: employee
 
+    Binary: tor-browser-windows-x86_64-portable-14.5.8.exe /S
 
-2025-10-14
-11:53:06 — Silent Install (Tor Browser)
+    Source: tor-install.csv
 
+**2025-10-20**
+*12:13:47 → 12:17:32 — Installs (Tor Browser)*
 
-User: employee
+    User: userr28i26
 
+    Events: Multiple installer runs, both normal and silent:
 
-Binary: tor-browser-windows-x86_64-portable-14.5.8.exe /S
 
+       tor-browser-windows-x86_64-portable-14.5.8.exe (several invocations)
 
-Source: tor-install.csv
+        Source: tor-install.csv
 
 
-2025-10-20
-12:13:47 → 12:17:32 — Installs (Tor Browser)
+**2025-10-06 → 2025-10-27 (Ongoing Usage Pattern)**
+  *Repeated Tor Browser executions (firefox.exe under the Tor Browser path) and Tor core launches (tor.exe) across users employee, josephcompton, murrellsh, userr28i26.*
 
+    Multiple outbound connections on Tor ports (notably 9001, 9150) to various external IPs consistent with Tor relays/bridges.
 
-User: userr28i26
+     Sources: tor-process-creation.csv, tor-usage.csv
 
 
-Events: Multiple installer runs, both normal and silent:
+**2025-10-27 (Focused Activity by employee)**
+  *21:01:30 — Silent Install (Tor Browser)*
 
+    User: employee
 
-tor-browser-windows-x86_64-portable-14.5.8.exe (several invocations)
+     Binary: tor-browser-windows-x86_64-portable-14.5.8.exe /S
 
+      Source: tor-install.csv
 
-Source: tor-install.csv
 
+**21:04:08 — Network Connection (Tor)**
 
-2025-10-06 → 2025-10-27 (Ongoing Usage Pattern)
-Repeated Tor Browser executions (firefox.exe under the Tor Browser path) and Tor core launches (tor.exe) across users employee, josephcompton, murrellsh, userr28i26.
+    User: employee
 
+    Process: tor.exe
 
-Multiple outbound connections on Tor ports (notably 9001, 9150) to various external IPs consistent with Tor relays/bridges.
+    Remote: 103.252.194.174:9001 (Tor relay port)
 
+    Path: c:\users\employee\desktop\tor browser\browser\torbrowser\tor\tor.exe
 
-Sources: tor-process-creation.csv, tor-usage.csv
+    Source: tor-usage.csv
 
 
-2025-10-27 (Focused Activity by employee)
-21:01:30 — Silent Install (Tor Browser)
+**21:11:22 — Artifact Creation**
 
+    User: employee
 
-User: employee
+    File Created: C:\Users\employee\Desktop\tor-shopping-list.txt
 
+    Hash (SHA256): 4e1b4aa4abe7f31b0f688410636b0c5e9dcdf0a6e30eca3c430089fde68870e3
 
-Binary: tor-browser-windows-x86_64-portable-14.5.8.exe /S
+    Also observed: tor-shopping-list.lnk in AppData\Roaming\Microsoft\Windows\…
 
+    Source: tor-download.csv
 
-Source: tor-install.csv
 
+**Up to 21:18:38 — Continued Tor Activity**
 
-21:04:08 — Network Connection (Tor)
+    Additional Tor Browser process starts and/or network connections recorded.
 
+    Sources: combined logs
 
-User: employee
+______________________
 
+**Quantitative Highlights (Tor-Only)**
+  *Event window: 2025-10-06 16:53:59 → 2025-10-27 21:18:38*
+   
+   *By event type (all users; deduped counts):*
 
-Process: tor.exe
+     Tor Browser (Firefox) started: 140
 
+    Network connections (Tor-related): 62
 
-Remote: 103.252.194.174:9001 (Tor relay port)
+    Tor core process started (tor.exe): 8
 
+    Silent installer executions (/S): 5
 
-Path: c:\users\employee\desktop\tor browser\browser\torbrowser\tor\tor.exe
+    Normal installer executions: 3
 
+    Tor-related file creations (incl. tor-shopping-list.txt): 11
 
-Source: tor-usage.csv
 
+*Observed Tor ports: 9001, 9150 (plus some 443 activity)*
 
-21:11:22 — Artifact Creation
+*Sample remote IPs seen: 103.252.194.174, 51.178.131.200, 46.4.66.178, 65.108.233.166, 88.99.142.177 (and others typical of Tor relays)*
 
-
-User: employee
-
-
-File Created: C:\Users\employee\Desktop\tor-shopping-list.txt
-
-
-Hash (SHA256): 4e1b4aa4abe7f31b0f688410636b0c5e9dcdf0a6e30eca3c430089fde68870e3
-
-
-Also observed: tor-shopping-list.lnk in AppData\Roaming\Microsoft\Windows\…
-
-
-Source: tor-download.csv
-
-
-Up to 21:18:38 — Continued Tor Activity
-
-
-Additional Tor Browser process starts and/or network connections recorded.
-
-
-Sources: combined logs
-
-
-
-Quantitative Highlights (Tor-Only)
-Event window: 2025-10-06 16:53:59 → 2025-10-27 21:18:38
-
-
-By event type (all users; deduped counts):
-
-
-Tor Browser (Firefox) started: 140
-
-
-Network connections (Tor-related): 62
-
-
-Tor core process started (tor.exe): 8
-
-
-Silent installer executions (/S): 5
-
-
-Normal installer executions: 3
-
-
-Tor-related file creations (incl. tor-shopping-list.txt): 11
-
-
-Observed Tor ports: 9001, 9150 (plus some 443 activity)
-
-
-Sample remote IPs seen: 103.252.194.174, 51.178.131.200, 46.4.66.178, 65.108.233.166, 88.99.142.177 (and others typical of Tor relays)
-
-
-Users with Tor activity: employee, josephcompton, murrellsh, userr28i26
+*Users with Tor activity: employee, josephcompton, murrellsh, userr28i26*
 
 ---
 
