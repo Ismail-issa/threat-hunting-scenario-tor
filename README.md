@@ -112,29 +112,28 @@ DeviceNetworkEvents
 
 ## Chronological Event Timeline 
 
-2025-10-06
-16:53:59 — Process Execution (Tor Browser)
+**2025-10-06**
+   *16:53:59 — Process Execution (Tor Browser)*
 
+    User: employee
 
-User: employee
+    Event: firefox.exe (Tor Browser) started
 
-Event: firefox.exe (Tor Browser) started
+    Note: Path indicates Tor Browser directory (portable build).
 
-Note: Path indicates Tor Browser directory (portable build).
+    Source: tor-process-creation.csv
 
-Source: tor-process-creation.csv
+  *16:55:35 — Network Connection (Tor)*
 
-16:55:35 — Network Connection (Tor)
+    User: employee
 
-User: employee
+    Process: tor.exe
 
-Process: tor.exe
+    Remote: 51.178.131.200:9001 (Tor relay port)
 
-Remote: 51.178.131.200:9001 (Tor relay port)
+    Path: c:\users\employee\desktop\tor browser\browser\torbrowser\tor\tor.exe
 
-Path: c:\users\employee\desktop\tor browser\browser\torbrowser\tor\tor.exe
-
-Source: tor-usage.csv
+    Source: tor-usage.csv
 
 2025-10-08
 20:22:26 — Silent Install (Tor Browser)
